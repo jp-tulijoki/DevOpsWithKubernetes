@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: main-app
-          image: riverfire/dwk-main-app:latest
+          image: riverfire/dwk-main-app:v0.1

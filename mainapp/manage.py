@@ -2,9 +2,6 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from time import sleep
-from datetime import datetime
-from mainapp.generator import generate_string
 
 def main():
     """Run administrative tasks."""
@@ -19,10 +16,6 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-
 if __name__ == '__main__':
-    #main()
-    random_string = generate_string()
-    while True:
-        print(datetime.now(), random_string)
-        sleep(5)
+    main()
+    
