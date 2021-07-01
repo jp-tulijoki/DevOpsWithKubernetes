@@ -1,0 +1,3 @@
+FROM python
+COPY reader.py .
+CMD ["python3", "-u", "reader.py"]

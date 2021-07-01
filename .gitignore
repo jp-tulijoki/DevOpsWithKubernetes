@@ -1,4 +1,5 @@
 **/env
-mainapp/db.sqlite3
-mainapp/mainapp/__pycache__
-mainapp/.env
+**/db.sqlite3
+**/mainapp/__pycache__
+**/.env
+mainapp/files

@@ -1,3 +1,4 @@
+import os.path
 from time import sleep
 from datetime import datetime
 from random import choice
@@ -11,8 +12,15 @@ class StringGenerator(Thread):
         self.timestamp = datetime.now()
 
     def run(self):
+        directory = "./files/"
+        filename = "hash.txt"
+        file_path = os.path.join(directory, filename)
+        if not os.path.isdir(directory):
+            os.mkdir(directory)
         while True:
             self.timestamp = datetime.now()
-            print(self.timestamp, self.random_string)
+            hash = f"{self.timestamp} {self.random_string}"
+            with open(file_path, "w") as file:
+                file.write(hash) 
             sleep(5)
 
