@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-pong-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-pong
+  template:
+    metadata:
+      labels:
+        app: main-pong
+    spec:
+      volumes:
+        - name: shared-volume
+          persistentVolumeClaim:
+            claimName: main-pong-claim
+      containers:
+        - name: main-app-generator
+          image: riverfire/dwk-main-app:v0.3
+          volumeMounts:
+            - name: shared-volume
+              mountPath: /files
+        - name: pingpong-app
+          image: riverfire/dwk-pingpong-app:v0.2
+          volumeMounts:
+            - name: shared-volume
+              mountPath: /files
