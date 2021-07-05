@@ -12,6 +12,13 @@ spec:
       labels:
         app: todo-app
     spec:
+      volumes:
+        - name: todoapp-volume
+          persistentVolumeClaim:
+            claimName: todoapp-claim
       containers:
         - name: todo-app
-          image: riverfire/dwk-todo-app:v0.3
+          image: riverfire/dwk-todo-app:v0.4
+          volumeMounts:
+            - name: todoapp-volume
+              mountPath: /src/main/resources/static/images
