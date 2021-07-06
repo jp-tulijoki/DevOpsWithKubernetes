@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pingpong-app-svc
+  name: pingpong-app
 spec:
   type: ClusterIP
   selector:
-    app: main-pong
+    app: pingpong-app
   ports:
-    - port: 2345
+    - name: pingpong-app
+      port: 3000
       protocol: TCP
       targetPort: 3000

@@ -3,3 +3,5 @@
 **/mainapp/__pycache__
 **/.env
 mainapp/files
+pingpongapp/files
+**/node_modules
